@@ -1,10 +1,7 @@
-package com.example.Labo2_Firebase;
+package com.example.Labo2_SQLite;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class Exercice implements Parcelable {
 

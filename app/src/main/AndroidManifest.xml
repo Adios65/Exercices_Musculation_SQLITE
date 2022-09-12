@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	package="Labo3_Firebase"
+	package="com.example.Labo2_SQLite"
 	>
 
 	<application
@@ -16,19 +16,19 @@
 		tools:targetApi="31"
 		>
 		<activity
-			android:name="com.example.Labo2_Firebase.ModifierActivity"
+			android:name="ModifierActivity"
 			android:exported="false"
 			/>
 		<activity
-			android:name="com.example.Labo2_Firebase.DetailActivity"
+			android:name="DetailActivity"
 			android:exported="false"
 			/>
 		<activity
-			android:name="com.example.Labo2_Firebase.CategorieActivity"
+			android:name="CategorieActivity"
 			android:exported="false"
 			/>
 		<activity
-			android:name="com.example.Labo2_Firebase.MainActivity"
+			android:name="MainActivity"
 			android:exported="true"
 			>
 			<intent-filter>

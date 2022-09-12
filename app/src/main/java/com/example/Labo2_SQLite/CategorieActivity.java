@@ -1,4 +1,4 @@
-package com.example.Labo2_Firebase;
+package com.example.Labo2_SQLite;
 
 import static android.widget.AdapterView.*;
 
@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,7 +28,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import Labo3_Firebase.R;
+
 
 public class CategorieActivity extends AppCompatActivity implements OnItemSelectedListener, View.OnClickListener {
 

@@ -1,9 +1,8 @@
-package com.example.Labo2_Firebase;
+package com.example.Labo2_SQLite;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-import java.util.Map;
 
-import Labo3_Firebase.R;
+
 
 public class ListViewArrayAdapter extends ArrayAdapter<Exercice> {
 

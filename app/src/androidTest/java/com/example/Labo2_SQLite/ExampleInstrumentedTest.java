@@ -1,4 +1,4 @@
-package com.example.Labo2_Firebase;
+package com.example.Labo2_SQLite;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.Labo2_Firebase", appContext.getPackageName());
+        assertEquals("com.example.Labo2_SQLite", appContext.getPackageName());
     }
 }

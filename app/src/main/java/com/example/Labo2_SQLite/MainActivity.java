@@ -1,4 +1,4 @@
-package com.example.Labo2_Firebase;
+package com.example.Labo2_SQLite;
 
 
 import androidx.annotation.NonNull;
@@ -22,7 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import Labo3_Firebase.R;
+
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {

@@ -1,10 +1,11 @@
-package com.example.Labo2_Firebase;
+package com.example.Labo2_SQLite;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -15,7 +16,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "bdexercices";
 
     public MyDataBaseHelper(@Nullable Context context) {
-        super(context, DB_NAME, null, 4);
+        super(context, DB_NAME, null, 6);
     }
 
     @Override
@@ -255,6 +256,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper {
         values.put("title", exercice.getTitle());
         values.put("img", exercice.getImg());
         values.put("repeat", exercice.getRepeat());
+        Log.d("te", exercice.getCategorie());
         values.put("categorie", exercice.getCategorie());
         values.put("sets", exercice.getSets());
         values.put("duree", exercice.getDuree());

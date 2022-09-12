@@ -1,4 +1,4 @@
-package com.example.Labo2_Firebase;
+package com.example.Labo2_SQLite;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import Labo3_Firebase.R;
+
 
 public class DetailActivity extends AppCompatActivity {
     ArrayList<Exercice> exercice = new ArrayList<>();

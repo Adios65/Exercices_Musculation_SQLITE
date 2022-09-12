@@ -1,4 +1,4 @@
-package com.example.Labo2_Firebase;
+package com.example.Labo2_SQLite;
 
 
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import Labo3_Firebase.R;
+
 
 
 public class SpinnerAdapter extends ArrayAdapter<String> {

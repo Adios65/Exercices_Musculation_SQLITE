@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.Labo2_Firebase"
+        applicationId "com.example.Labo2_SQLite"
         minSdk 29
         targetSdk 32
         versionCode 1

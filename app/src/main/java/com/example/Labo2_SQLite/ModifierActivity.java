@@ -1,11 +1,10 @@
-package com.example.Labo2_Firebase;
+package com.example.Labo2_SQLite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -16,10 +15,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Objects;
 
-import Labo3_Firebase.R;
+
 
 public class ModifierActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
@@ -58,7 +56,7 @@ public class ModifierActivity extends AppCompatActivity implements AdapterView.O
 
         //CHANGER TITRE
         formTitre = findViewById(R.id.form_Titre);
-        formTitre.setText("Modifer Exercice");
+        formTitre.setText("Modifier Exercice");
 
         //GET EXERCICE A MODIFIER
         Bundle extras = getIntent().getExtras();
@@ -250,6 +248,7 @@ public class ModifierActivity extends AppCompatActivity implements AdapterView.O
         //Modifier Exercice
         exercice_a_modifier.setTitle(nomInput.getText().toString());
         exercice_a_modifier.setDescription(descriptionInput.getText().toString());
+        exercice_a_modifier.setCategorie(spinnerCategorie.getSelectedItem().toString());
         exercice_a_modifier.setPause(spinnerPause.getSelectedItem().toString());
         exercice_a_modifier.setSets(spinnerSets.getSelectedItem().toString());
         exercice_a_modifier.setDuree(spinnerDuree.getSelectedItem().toString());
