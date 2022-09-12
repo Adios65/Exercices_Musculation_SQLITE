@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -27,7 +28,7 @@ public class ModifierActivity extends AppCompatActivity implements AdapterView.O
     Exercice exercice_a_modifier;
 
     TextView formTitre;
-    String key;
+
 
     //FORM VALUE
     EditText nomInput;
@@ -37,6 +38,8 @@ public class ModifierActivity extends AppCompatActivity implements AdapterView.O
     Spinner spinnerPause;
     Spinner spinnerRepeat;
     Spinner spinnerDuree;
+
+    MyDataBaseHelper maDB = new MyDataBaseHelper(context);
 
 
     @Override
@@ -225,7 +228,9 @@ public class ModifierActivity extends AppCompatActivity implements AdapterView.O
         switch (view.getId()) {
 
             case R.id.btn_modifier:
+                maDB.modifierExercice(exercice_a_modifier);
                 updateExercice(exercice_a_modifier);
+                Log.d("TAG",exercice_a_modifier.getTitle());
                 this.finish();
                 break;
             case R.id.btn_supprimer:
@@ -254,7 +259,7 @@ public class ModifierActivity extends AppCompatActivity implements AdapterView.O
 
 
 //        Map<String, Object> hashExercice = exercice_a_modifier.toMap();
-//        fireDB.modifier(key, hashExercice);
+        maDB.modifierExercice(exercice_a_modifier);
 
     }
 

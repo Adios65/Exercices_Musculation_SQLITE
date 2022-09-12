@@ -25,6 +25,7 @@ public class ListViewArrayAdapter extends ArrayAdapter<Exercice> {
     private final Context mContext;
     int mResource;
 
+
     public ListViewArrayAdapter(Context context, int resource, ArrayList<Exercice> objects) {
         super(context, resource, objects);
         mContext = context;
@@ -36,6 +37,8 @@ public class ListViewArrayAdapter extends ArrayAdapter<Exercice> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, ViewGroup parent) {
+
+        MyDataBaseHelper maDB = new MyDataBaseHelper(mContext);
 
         //GET THE EXERCICE BEING LISTED
         Exercice exercice = getItem(position);
@@ -72,18 +75,17 @@ public class ListViewArrayAdapter extends ArrayAdapter<Exercice> {
             btn_favorie.setBackgroundResource(R.drawable.favoris);
         }
 
+
         //OnCLICK LISTENER FOR UPDATE
         btn_favorie.setOnClickListener(view -> {
             //Modifier Favori dans l'exercice
-//            if (exercice.getFavorite().equals("0")) {
-//                exercice.setFavorite("1");
-//                Map<String, Object> hashExercice = exercice.toMap();
-//                fireDB.modifier(key, hashExercice);
-//            } else {
-//                exercice.setFavorite("0");
-//                Map<String, Object> hashExercice = exercice.toMap();
-//                fireDB.modifier(key, hashExercice);
-//            }
+            if (exercice.getFavorite().equals("0")) {
+                exercice.setFavorite("1");
+                maDB.setFavoris(exercice.get_id());
+            } else {
+                exercice.setFavorite("0");
+                maDB.unsetFavoris(exercice.get_id());
+            }
         });
 
 
