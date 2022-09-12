@@ -68,7 +68,6 @@ public class ModifierActivity extends AppCompatActivity implements AdapterView.O
         }
 
 
-
         //ENLEVER TOP ACTION BAR
         Objects.requireNonNull(getSupportActionBar()).hide();
 
@@ -229,11 +228,11 @@ public class ModifierActivity extends AppCompatActivity implements AdapterView.O
 
             case R.id.btn_modifier:
                 updateExercice(exercice_a_modifier);
-                Log.d("TAG",exercice_a_modifier.getTitle());
                 this.finish();
                 break;
             case R.id.btn_supprimer:
                 maDB.effacerExercice(exercice_a_modifier.get_id());
+
                 this.finish();
                 break;
             case R.id.btn_annuler:

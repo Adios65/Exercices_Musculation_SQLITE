@@ -81,13 +81,14 @@ public class ListViewArrayAdapter extends ArrayAdapter<Exercice> {
             //Modifier Favori dans l'exercice
             if (exercice.getFavorite().equals("0")) {
                 exercice.setFavorite("1");
+                btn_favorie.setBackgroundResource(R.drawable.favoris);
                 maDB.setFavoris(exercice.get_id());
             } else {
                 exercice.setFavorite("0");
+                btn_favorie.setBackgroundResource(R.drawable.non_favoris);
                 maDB.unsetFavoris(exercice.get_id());
             }
         });
-
 
 
         //OnCLICK LISTENER FOR UPDATE

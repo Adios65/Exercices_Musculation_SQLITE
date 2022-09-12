@@ -1,4 +1,5 @@
 package com.example.Labo2_Firebase;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,9 +7,11 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -45,6 +48,7 @@ public class DetailActivity extends AppCompatActivity {
     private void afficherDetail() {
         ImageView imgIV = (ImageView) findViewById(R.id.imageView_detail);
         TextView descriptionTV = (TextView) findViewById(R.id.textView_description);
+        descriptionTV.setMovementMethod(new ScrollingMovementMethod());
         TextView setsTV = (TextView) findViewById(R.id.textView_sets);
         TextView repeatTV = (TextView) findViewById(R.id.textView_repeat);
         int img_id = context.getResources().getIdentifier(exercice.get(0).getImg(), "drawable", context.getPackageName());

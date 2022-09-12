@@ -46,6 +46,8 @@ public class CategorieActivity extends AppCompatActivity implements OnItemSelect
     //DATABASEHELPER FOR DATABASE
     MyDataBaseHelper maDB;
 
+    String categorieChoisie;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //DEFAULT
@@ -65,13 +67,11 @@ public class CategorieActivity extends AppCompatActivity implements OnItemSelect
 
         //GET CategorieChoisie
         Bundle extras = getIntent().getExtras();
-        String categorieChoisie = "";
+        categorieChoisie = "";
         if (extras != null) {
             categorieChoisie = extras.getString("categorieChoisie");
             getSupportActionBar().setTitle(categorieChoisie);
         }
-        Log.d("Categ",categorieChoisie);
-
         //LISTER LE ARRAYLIST
         listerExerciceSelonCategorie(categorieChoisie);
 
@@ -105,7 +105,6 @@ public class CategorieActivity extends AppCompatActivity implements OnItemSelect
                 ArrayList<Exercice> exercice = new ArrayList<>();
                 exercice.add((Exercice) parent.getItemAtPosition(position));
 
-                Log.d("TAG", "CATEGORY2");
                 //Send ARRAYLIST avec L'Exercice to DetailActivity
                 Intent intent = new Intent(context, DetailActivity.class);
                 intent.putParcelableArrayListExtra("detailExercice", exercice);
@@ -113,32 +112,30 @@ public class CategorieActivity extends AppCompatActivity implements OnItemSelect
 
             });
         } else if (!categorieChoisie.equals("")) {
-                listeExercicesCategorie = new ArrayList<>();
-                for (Exercice unique : listeExercices) {
-                    if (unique.getCategorie().equalsIgnoreCase(categorieChoisie)) {
-                        listeExercicesCategorie.add(unique);
-                    }
+            listeExercicesCategorie = new ArrayList<>();
+            for (Exercice unique : listeExercices) {
+                if (unique.getCategorie().equalsIgnoreCase(categorieChoisie)) {
+                    listeExercicesCategorie.add(unique);
                 }
-                    //Get ListView to show Exercices
-                    listViewExercicesCategorie = findViewById(R.id.liste_Exercices_Categorie);
-                    arrayAdapter = new ListViewArrayAdapter(context, R.layout.exercices_list_layout, listeExercicesCategorie);
-                    listViewExercicesCategorie.setAdapter(arrayAdapter);
+            }
+            //Get ListView to show Exercices
+            listViewExercicesCategorie = findViewById(R.id.liste_Exercices_Categorie);
+            arrayAdapter = new ListViewArrayAdapter(context, R.layout.exercices_list_layout, listeExercicesCategorie);
+            listViewExercicesCategorie.setAdapter(arrayAdapter);
 
 
-                    listViewExercicesCategorie.setOnItemClickListener((parent, view, position, id) -> {
-                        //AJOUTER L'EXERCICE SUR LEQUEL ON A CLIQUÉ DANS ARRAYLIST
-                        ArrayList<Exercice> exercice = new ArrayList<>();
-                        exercice.add((Exercice) parent.getItemAtPosition(position));
+            listViewExercicesCategorie.setOnItemClickListener((parent, view, position, id) -> {
+                //AJOUTER L'EXERCICE SUR LEQUEL ON A CLIQUÉ DANS ARRAYLIST
+                ArrayList<Exercice> exercice = new ArrayList<>();
+                exercice.add((Exercice) parent.getItemAtPosition(position));
 
-                        Log.d("TAG", "CATEGORY2");
-                        //Send ARRAYLIST avec L'Exercice to DetailActivity
-                        Intent intent = new Intent(context, DetailActivity.class);
-                        intent.putParcelableArrayListExtra("detailExercice", exercice);
-                        startActivity(intent);
-                    });
+                //Send ARRAYLIST avec L'Exercice to DetailActivity
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putParcelableArrayListExtra("detailExercice", exercice);
+                startActivity(intent);
+            });
 
         }
-
 
 
     }
@@ -217,7 +214,9 @@ public class CategorieActivity extends AppCompatActivity implements OnItemSelect
 
                     //Insert into Database_______________________________________________________________________________________________________________________
                     Exercice exercice = new Exercice(nomForm, imageForm, repeatForm, categorieForm, setsForm, dureeForm, descriptionForm, pauseForm, favoriteForm);
+
                     maDB.enregistrerExercice(exercice);
+
                     //TEST_______________________________________________________________________________________________________________________________________
                     arrayAdapter.notifyDataSetChanged();
                     Toast.makeText(context, "Exercice " + nomForm + " sauvegarder correctement!", Toast.LENGTH_LONG).show();
@@ -285,5 +284,13 @@ public class CategorieActivity extends AppCompatActivity implements OnItemSelect
         if (view.getId() == R.id.btn_form) {
             formAjouterExercice();
         }
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+
+        listeExercices = maDB.obtenirToutLesExercices();
+        listerExerciceSelonCategorie(categorieChoisie);
     }
 }
