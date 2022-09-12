@@ -76,7 +76,7 @@ public class ListViewArrayAdapter extends ArrayAdapter<Exercice> {
         }
 
 
-        //OnCLICK LISTENER FOR UPDATE
+        //OnCLICK LISTENER FOR FAVORITE
         btn_favorie.setOnClickListener(view -> {
             //Modifier Favori dans l'exercice
             if (exercice.getFavorite().equals("0")) {

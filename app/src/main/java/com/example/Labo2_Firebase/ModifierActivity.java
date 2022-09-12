@@ -228,13 +228,12 @@ public class ModifierActivity extends AppCompatActivity implements AdapterView.O
         switch (view.getId()) {
 
             case R.id.btn_modifier:
-                maDB.modifierExercice(exercice_a_modifier);
                 updateExercice(exercice_a_modifier);
                 Log.d("TAG",exercice_a_modifier.getTitle());
                 this.finish();
                 break;
             case R.id.btn_supprimer:
-//                deleteExercice(exercice_a_modifier);
+                maDB.effacerExercice(exercice_a_modifier.get_id());
                 this.finish();
                 break;
             case R.id.btn_annuler:

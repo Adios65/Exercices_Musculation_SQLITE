@@ -262,8 +262,7 @@ public class MyDataBaseHelper extends SQLiteOpenHelper {
         values.put("description", exercice.getDescription());
         values.put("pause", exercice.getPause());
         values.put("favorite", exercice.getFavorite());
-        this.getWritableDatabase().update("exercices", values,"_id",new String[exercice.get_id()]);
-//        this.getWritableDatabase().execSQL("UPDATE exercices SET 'favorite' = '1' WHERE _id  = ?", new Integer[]{id});
+        this.getWritableDatabase().update("exercices", values,"_id = "+exercice.get_id().toString(),null);
     }
 }
 
