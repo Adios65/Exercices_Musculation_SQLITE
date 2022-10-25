@@ -3,22 +3,22 @@
 <table>
   <tr>
     <td><img src="/app/src/screenshots/screenshot1.png" width=270 height=560></td>
-    <td><img src="/app/src/screenshots/screenshot2.jpg" width=270 height=560></td>
-    <td><img src="/app/src/screenshots/screenshot3.jpg" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot2.png" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot3.png" width=270 height=560></td>
   </tr>
     <tr>
-    <td><img src="/app/src/screenshots/screenshot4.jpg" width=270 height=560></td>
-    <td><img src="/app/src/screenshots/screenshot5.jpg" width=270 height=560></td>
-    <td><img src="/app/src/screenshots/screenshot6.jpg" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot4.png" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot5.png" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot6.png" width=270 height=560></td>
   </tr>
     <tr>
-    <td><img src="/app/src/screenshots/screenshot7.jpg" width=270 height=560></td>
-    <td><img src="/app/src/screenshots/screenshot8.jpg" width=270 height=560></td>
-    <td><img src="/app/src/screenshots/screenshot9.jpg" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot7.png" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot8.png" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot9.png" width=270 height=560></td>
   </tr>
     <tr>
-    <td><img src="/app/src/screenshots/screenshot10.jpg" width=270 height=560></td>
-    <td><img src="/app/src/screenshots/screenshot11.jpg" width=270 height=560></td>
-    <td><img src="/app/src/screenshots/screenshot12.jpg" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot10.png" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot11.png" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot12.png" width=270 height=560></td>
   </tr>
  </table>
