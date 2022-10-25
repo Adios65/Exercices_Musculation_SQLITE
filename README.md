@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <td><img src="/app/src/screenshots/screenshot1.jpg" width=270 height=560></td>
+    <td><img src="/app/src/screenshots/screenshot1.png" width=270 height=560></td>
     <td><img src="/app/src/screenshots/screenshot2.jpg" width=270 height=560></td>
     <td><img src="/app/src/screenshots/screenshot3.jpg" width=270 height=560></td>
   </tr>
