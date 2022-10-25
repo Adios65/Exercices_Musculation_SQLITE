@@ -1,4 +1,4 @@
-# Labo2_SQLITE
+# Exercices_Musculation_SQLITE
 
 <table>
   <tr>
