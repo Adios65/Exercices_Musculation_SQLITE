@@ -1,5 +1,7 @@
 package com.example.Labo2_Firebase;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -82,9 +84,11 @@ public class ListViewArrayAdapter extends ArrayAdapter<Exercice> {
             if (exercice.getFavorite().equals("0")) {
                 exercice.setFavorite("1");
                 maDB.setFavoris(exercice.get_id());
+                btn_favorie.setBackgroundResource(R.drawable.favoris);
             } else {
                 exercice.setFavorite("0");
                 maDB.unsetFavoris(exercice.get_id());
+                btn_favorie.setBackgroundResource(R.drawable.non_favoris);
             }
         });
 
